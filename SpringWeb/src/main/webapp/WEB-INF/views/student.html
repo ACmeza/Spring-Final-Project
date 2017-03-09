@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>List of Students</title>
+</head>
+<body>
+<body>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Email</th>
+    </tr>
+    <tr th:each="student : ${students}">
+        <td th:text="${student.idStudent}"></td>
+        <td th:text="${student.firstName} + ' ' + ${student.lastName}"></td>
+        <td th:text="${student.studentAdress}"></td>
+        <td th:text="${student.phoneNumber}"></td>
+        <td th:text="${student.emailAdress}"></td>
+    </tr>
+</table>
+<a th:href="@{/addstudent}">Add Student</a>
+</br>
+<a th:href="@{/}">Return to Index</a>
+</body>
+</body>
+</html>
